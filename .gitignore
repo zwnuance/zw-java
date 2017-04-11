@@ -1,0 +1,20 @@
+.idea/
+
+*.class
+
+# Log file
+*.log
+
+*.jar
+*.war
+*.zip
+*.tar.gz
+*.rar
+
+hs_err_pid*
+
+.gradle
+/build/
+gradle-app.setting
+!gradle-wrapper.jar
+

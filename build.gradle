@@ -1,0 +1,14 @@
+group 'org.zw'
+version '1.0-SNAPSHOT'
+
+subprojects {
+  apply plugin: 'java'
+  apply plugin: 'idea'
+
+  [compileJava,compileTestJava,javadoc]*.options*.encoding = 'UTF-8'
+
+  repositories {
+    mavenLocal()
+    mavenCentral()
+  }
+}

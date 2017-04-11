@@ -1,0 +1,22 @@
+server:
+  contextPath: /
+  port: 8888
+
+spring:
+  jackson:
+    serialization:
+      INDENT_OUTPUT: true
+
+jwt:
+  header: Authorization
+  secret: mySecret
+  expiration: 604800
+  router:
+    authentication:
+      path: auth
+      refresh: refresh
+
+logging:
+  level:
+    org.springframework:
+      security: DEBUG

@@ -1,0 +1,59 @@
+rootProject.name = 'zw-java'
+
+/* auth */
+include 'zw-auth:zw-auth-cookie'
+findProject(':zw-auth:zw-auth-cookie')?.name = 'zw-auth-cookie'
+include 'zw-auth:zw-auth-session'
+findProject(':zw-auth:zw-auth-session')?.name = 'zw-auth-session'
+include 'zw-auth:zw-auth-token'
+findProject(':zw-auth:zw-auth-token')?.name = 'zw-auth-token'
+include 'zw-auth:zw-auth-jwt'
+findProject(':zw-auth:zw-auth-jwt')?.name = 'zw-auth-jwt'
+
+/* cookie */
+include 'zw-cache:zw-cache-redis'
+findProject(':zw-cache:zw-cache-redis')?.name = 'zw-cache-redis'
+include 'zw-cache:zw-cache-ehcache'
+findProject(':zw-cache:zw-cache-ehcache')?.name = 'zw-cache-ehcache'
+include 'zw-cache:zw-cache-caffeine'
+findProject(':zw-cache:zw-cache-caffeine')?.name = 'zw-cache-caffeine'
+
+/* db */
+include 'zw-db:zw-db-h2'
+findProject(':zw-db:zw-db-h2')?.name = 'zw-db-h2'
+include 'zw-db:zw-db-paging'
+findProject(':zw-db:zw-db-paging')?.name = 'zw-db-paging'
+include 'zw-db:zw-db-h2-mem'
+findProject(':zw-db:zw-db-h2-mem')?.name = 'zw-db-h2-mem'
+include 'zw-db:zw-db-liquibase'
+findProject(':zw-db:zw-db-liquibase')?.name = 'zw-db-liquibase'
+
+/* msg */
+include 'zw-msg:zw-msg-grpc'
+findProject(':zw-msg:zw-msg-grpc')?.name = 'zw-msg-grpc'
+include 'zw-msg:zw-msg-rest'
+findProject(':zw-msg:zw-msg-rest')?.name = 'zw-msg-rest'
+include 'zw-msg:zw-msg-thrift'
+findProject(':zw-msg:zw-msg-thrift')?.name = 'zw-msg-thrift'
+
+/* net */
+include 'zw-net:zw-net-okhttp'
+findProject(':zw-net:zw-net-okhttp')?.name = 'zw-net-okhttp'
+include 'zw-net:zw-net-retrofit'
+findProject(':zw-net:zw-net-retrofit')?.name = 'zw-net-retrofit'
+
+/* jvm */
+include 'zw-jvm:zw-jvm-gc'
+findProject(':zw-jvm:zw-jvm-gc')?.name = 'zw-jvm-gc'
+include 'zw-jvm:zw-jvm-btrace'
+findProject(':zw-jvm:zw-jvm-btrace')?.name = 'zw-jvm-btrace'
+
+/* design-pattern' */
+include 'zw-design-patterns:zw-design-patterns-creational'
+findProject(':zw-design-patterns:zw-design-patterns-creational')?.name = 'zw-design-patterns-creational'
+include 'zw-design-patterns:zw-design-patterns-behavioral'
+findProject(':zw-design-patterns:zw-design-patterns-behavioral')?.name = 'zw-design-patterns-behavioral'
+include 'zw-design-patterns:zw-design-patterns-sructural'
+findProject(':zw-design-patterns:zw-design-patterns-sructural')?.name = 'zw-design-patterns-structural'
+include 'zw-template'
+
