@@ -57,3 +57,5 @@ include 'zw-design-patterns:zw-design-patterns-sructural'
 findProject(':zw-design-patterns:zw-design-patterns-sructural')?.name = 'zw-design-patterns-structural'
 include 'zw-template'
 
+include 'zw-java8'
+findProject(':zw-java8')?.name = 'zw-java8'

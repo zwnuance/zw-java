@@ -14,7 +14,8 @@
 hs_err_pid*
 
 .gradle
-/build/
+build/
+classes/
 gradle-app.setting
 !gradle-wrapper.jar
 
