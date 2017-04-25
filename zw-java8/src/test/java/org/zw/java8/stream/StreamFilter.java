@@ -1,13 +1,7 @@
 package org.zw.java8.stream;
 
-import com.google.common.base.Charsets;
-import com.google.common.io.Resources;
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.URI;
-import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Arrays;
@@ -27,7 +21,7 @@ public class StreamFilter {
 
   @Before
   public void init() throws IOException {
-    String contents = new String(Files.readAllBytes(Paths.get(getClass().getResource("/alice.txt").getFile().substring(1))), Charsets.UTF_8);
+    String contents = new String(Files.readAllBytes(Paths.get(getClass().getResource("/alice.txt").getFile().substring(1))), StandardCharsets.UTF_8);
     words = Arrays.asList(contents.split("[\\P{L}]"));
   }
 
@@ -58,7 +52,7 @@ public class StreamFilter {
   public void testSubStream() throws IOException {
     Stream<String> lines = Files.lines(Paths.get(getClass().getResource("/alice.txt").getFile().substring(1)));
     long count =
-        lines.map(w -> Arrays.asList(w.split("[\\P{L}]")).stream().filter(c -> c.length() > 12).count())
+        lines.map(w -> Stream.of(w.split("[\\P{L}]")).filter(c -> c.length() > 12).count())
             .reduce((sum, c) -> sum + c).get();
     assertEquals(16, count);
   }
