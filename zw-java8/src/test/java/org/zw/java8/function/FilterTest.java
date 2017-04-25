@@ -24,6 +24,7 @@ public class FilterTest {
 
   @Test
   public void filterArray() {
+
     System.out.print("Languages which starts with J: ");
     filter(languages, (str) -> str.startsWith("J"));
 
