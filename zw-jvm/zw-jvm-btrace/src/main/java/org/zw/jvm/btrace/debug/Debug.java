@@ -1,7 +1,8 @@
 package org.zw.jvm.btrace.debug;
 
-import com.sun.btrace.BTraceUtils;
+import static com.sun.btrace.BTraceUtils.*;
 import com.sun.btrace.annotations.*;
+import com.sun.btrace.annotations.Export;
 
 /**
  * Created by zw on 4/12/2017.
@@ -11,15 +12,15 @@ public class Debug {
 
   @Export static long counter;
 
-  @OnMethod(clazz = "BtraceCase", method = "add", location = @Location(Kind.RETURN))
+  @OnMethod(clazz = "org.zw.jvm.btrace.BtraceCase", method = "add", location = @Location(Kind.RETURN))
   public static void run(@Self Object self, int a, int b, @Return int result, @Duration long time) {
-    BTraceUtils.println("parameter: a=" + a + ", b=" + b);
-    BTraceUtils.println("cost time: " + time);
+    println(strcat(strcat("parameter: a=", str(a)), strcat(", b=", str(b))));
+    println(strcat("cost time: ", str(time)));
     counter++;
   }
 
   @OnTimer(1000)
   public static void run() {
-    BTraceUtils.println("execute counter: " + counter);
+    println(strcat("execute counter: ", str(counter)));
   }
 }
